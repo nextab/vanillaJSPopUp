@@ -1,0 +1,174 @@
+/* #region Survey Modal / Popup */
+.home .flo_page > .flo-block.flex-block-root:nth-last-child(2) {
+	z-index: 999999;
+}
+.survey_modal {
+	background: #fff;
+	box-shadow: 0 0 15px 1px #0003;
+	height: auto;
+	left: 50%;
+	max-width: 750px;
+	position: fixed;
+	top: 15%;
+	transform: translatex(-50%);
+	width: 90%;
+	z-index: 20000;
+	&:not(.active) {
+		display: none;
+	}
+	.flex-block__main-container {
+		height: auto !important;
+		padding: 3.5rem 2rem 2rem;
+	}
+	.flex-block__element {
+		height: auto;
+		left: 0;
+		margin: 0 auto 30px;
+		position: relative !important;
+		top: 0;
+		width: 100%;
+		&.flex-block__element--button {
+			background-color: transparent;
+			height: auto;
+			pointer-events: none;
+			text-align: center;
+			span {
+				background-color: #66293F !important;
+				border-radius: 2px;
+				display: block;
+				line-height: 1.7em;
+				padding: 4px 10px;
+				pointer-events: all;
+				transition: all 300ms ease;
+				width: auto;
+			}
+			&:hover {
+				span { background-color: #DFD4D9 !important; }
+			}
+		}
+		&.close_button {
+			cursor: pointer;
+			left: auto;
+			pointer-events: all;
+			position: absolute !important;
+			right: 15px !important;
+			top: 10px;
+			// transform: scalex(1.3);
+			width: 20px;
+			* { pointer-events: none; }
+			p {
+				cursor: pointer;
+				text-align: center;
+			}
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+.flo-block.flex-block-root {
+	.flo-block__container {
+		.flex-block.survey_modal {
+			.flex-block__element {
+				.flex-block__text-content {
+					p {
+						font-size: 17px !important;
+						line-height: 1.6 !important;
+					}
+					.spacer {
+						line-height: 17px !important;
+					}
+				}
+				&.close_button {
+					.flex-block__text-content {
+						p {
+							font-size: 28px !important;
+							font-weight: 700 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// v2 with its own page
+.more_info_container {
+	padding: 50px 0 0;
+	font-family: 'Muli-Regular';
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.6;
+	top: 10%;
+	max-height: 85vh;
+	.scrollable {
+		margin-bottom: 30px;
+		max-height: 77vh;
+		overflow-y: auto;
+		padding: 0 30px 50px;
+	}
+	.close_button {
+		// transform: scalex(1.3);
+		cursor: pointer;
+		font-size: 28px;
+		font-weight: 700;
+		left: auto;
+		pointer-events: all;
+		position: absolute;
+		right: 15px;
+		top: 10px;
+		width: 20px;
+	}
+	.wp-block-buttons {
+		margin-top: 30px;
+		text-align: center;
+	}
+	a.wp-block-button__link {
+		background-color: #66293f;
+		font-size: 17px;
+		line-height: 1.6;
+		padding: 8px 20px;
+		transition: all 500ms ease;
+		&:hover {
+			background-color: #DFD4D9;
+		}
+	}
+}
+body.modal-open {
+	overflow-y: hidden;
+	&::before {
+		background-color: #0004;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 99;
+	}
+}
+.trigger_more_info_container {
+	bottom: 5%;
+	position: fixed;
+	right: -20px;
+	transform: rotate(-90deg);
+}
+body.show-trigger:not(.modal-open) {
+	.trigger_more_info_container {
+		display: block !important;
+	}
+}
+button.show_survey_button {
+	background-color: rgb(112, 35, 63);
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 5px 10px 10px;
+	transition: all 500ms ease;
+	&:hover {
+		background-color: #DFD4D9;
+	}
+}
+/* #endregion */
